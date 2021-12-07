@@ -83,15 +83,18 @@ const getSomeRandom = count => {
 //     return getQuotesByObject(quote, "type");
 // };
 
-// const getAll = () => {
-//     return array;
-// };
 
-// module.exports = {
-//     getAll,
-//     getRandomQuote,
-//     getSomeRandom,
-//     getQuoteByYear,
-//     getQuotesByMovie,
-//     getQuotesByType
-// };
+const getAllOfOneYear = Year => {
+    let year = require('./database/' + Year + '.json');
+    return year[0];
+};
+console.log(getAllOfOneYear(1875));
+
+module.exports = {
+    getAllOfOneYear,
+    // getSomeRandom,
+    // getQuoteByYear,
+    // getQuotesByMovie,
+    // getQuotesByType,
+    getOnlyOneRandomEvent
+};
